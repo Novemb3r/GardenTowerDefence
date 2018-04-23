@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1854203158932572}
+  m_IsPrefabParent: 1
+--- !u!1 &1854203158932572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4752599096435428}
+  - component: {fileID: 114369422110140012}
+  m_Layer: 0
+  m_Name: EnemySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4752599096435428
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1854203158932572}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -177.46, y: 1.05, z: 59.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114369422110140012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1854203158932572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4d94dc49c71a545b9ed7626e837b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - delay: 30
+    deltaTime: 2
+    speed: 4
+    hp: 30
+    amount: 10
+    creep: {fileID: 4171404214644010, guid: 17a8148c9efe09e45b17f4907dfed3d5, type: 2}
+  - delay: 7
+    deltaTime: 2
+    speed: 7
+    hp: 50
+    amount: 10
+    creep: {fileID: 4331907573102850, guid: fcfe33f0b7d7a3d4c98e750513851cb4, type: 2}
+  - delay: 7
+    deltaTime: 2
+    speed: 2
+    hp: 100
+    amount: 10
+    creep: {fileID: 4198094134288678, guid: ebd5e77c99870c743a9d8a7cab4bb744, type: 2}
+  - delay: 10
+    deltaTime: 1.5
+    speed: 5
+    hp: 45
+    amount: 10
+    creep: {fileID: 4542616464504294, guid: 51b5ccde602005b41b751f20dc63de5c, type: 2}
+  - delay: 5
+    deltaTime: 2
+    speed: 4
+    hp: 80
+    amount: 10
+    creep: {fileID: 4193717764975106, guid: 7ad34bfefe9722e46905247ebac5cbd9, type: 2}
+  - delay: 5
+    deltaTime: 1.5
+    speed: 4
+    hp: 60
+    amount: 15
+    creep: {fileID: 4760172638449388, guid: 2ef3e677685af6948962b5960fc9e44d, type: 2}
+  - delay: 2
+    deltaTime: 1.5
+    speed: 8
+    hp: 60
+    amount: 12
+    creep: {fileID: 4053120996324180, guid: e00d531562afaea4883c0c92ef50cfb9, type: 2}
+  - delay: 2
+    deltaTime: 2
+    speed: 2
+    hp: 150
+    amount: 20
+    creep: {fileID: 4773581254750294, guid: 367035eea1e372e48a4d45e5151ab728, type: 2}
+  - delay: 10
+    deltaTime: 2
+    speed: 4
+    hp: 100
+    amount: 20
+    creep: {fileID: 4694119243864596, guid: a904b29d72252a547af12d84dea93415, type: 2}
+  - delay: 2
+    deltaTime: 1.8
+    speed: 6
+    hp: 120
+    amount: 15
+    creep: {fileID: 4331907573102850, guid: fcfe33f0b7d7a3d4c98e750513851cb4, type: 2}
+  - delay: 2
+    deltaTime: 1.8
+    speed: 4
+    hp: 1800
+    amount: 1
+    creep: {fileID: 4064072832201162, guid: e19c38abbe1ac6e499e6c128ef6c0013, type: 2}
+  - delay: 30
+    deltaTime: 1.8
+    speed: 4
+    hp: 200
+    amount: 10
+    creep: {fileID: 4193717764975106, guid: 7ad34bfefe9722e46905247ebac5cbd9, type: 2}
+  - delay: 10
+    deltaTime: 1
+    speed: 7
+    hp: 180
+    amount: 15
+    creep: {fileID: 4777052585238192, guid: c9e4a6a10f55c3e4eb4c4f4872ede4b8, type: 2}
+  spawnPoint: {fileID: 4752599096435428}
+  hpIncreasePerLoop: 150

@@ -10,8 +10,6 @@ public class CameraControlv2 : MonoBehaviour {
     public float wheel_speed = 50f;
     public float min_zoom = 14;
     public float max_zoom = 100;
-    private Vector3 max_zoom_vector;
-    private Vector3 min_zoom_vector;
 
     private int theScreenWidth;
 	private int theScreenHeight;
@@ -31,15 +29,22 @@ public class CameraControlv2 : MonoBehaviour {
                    transform.forward.y * transform.position.y +
                    transform.forward.z * transform.position.z;
         zoom_now /= -transform.forward.magnitude;
-        max_zoom_vector = transform.position + transform.forward * ( zoom_now - max_zoom);
-        min_zoom_vector = transform.position + transform.forward * ( zoom_now - min_zoom);
 
         right_vec = new Vector3(transform.right.x, 0, transform.right.z).normalized;
         up_vec = new Vector3(transform.up.x, 0, transform.up.z).normalized;
     }
-
+    float leftX = -146;
+    float rightX = 67;
+    float topZ = 28;
+    float bottomZ = -195;
 	void Update()
     {
+        if (Lives.GameIsOver)
+        {
+            this.enabled = false;
+            return;
+        }
+
         float mw = Input.GetAxis("Mouse ScrollWheel");
         float delta;
         if (mw != 0 && !Camera.main.orthographic)
@@ -84,6 +89,21 @@ public class CameraControlv2 : MonoBehaviour {
                                 0,
                                 -speed * Time.deltaTime * up_vec.z, Space.World);
         }
-
+        if (transform.position.x < leftX)
+        {
+            transform.position = new Vector3(leftX, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > rightX)
+        {
+            transform.position = new Vector3(rightX, transform.position.y, transform.position.z);
+        }
+        if (transform.position.z < bottomZ)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, bottomZ);
+        }
+        if (transform.position.z > topZ)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, topZ);
+        }
     }   
 }

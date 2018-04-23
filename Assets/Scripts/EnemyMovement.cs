@@ -25,19 +25,25 @@ public class EnemyMovement : MonoBehaviour {
         {
             GetNextWaypoint();
         }
-
-        enemy.speed = enemy.startSpeed;
+        enemy.SpeedTick(Time.deltaTime);
+        //enemy.speed = enemy.startSpeed;
     }
 
     void GetNextWaypoint()
     {
         if (waypointIndex >= Waypoints.points.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
 
         waypointIndex++;
         target = Waypoints.points[waypointIndex];
+    }
+
+    void EndPath()
+    {
+        Lives.lives--;
+        Destroy(gameObject);
     }
 }

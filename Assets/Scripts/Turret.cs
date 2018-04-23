@@ -9,6 +9,7 @@ public class Turret : MonoBehaviour {
 
     [Header("General")]
     public float range = 15f;
+    public int cost = 10;
     public LineRenderer lineRenderer;
 
     [Header("Use Bullets (default)")]
@@ -125,7 +126,7 @@ public class Turret : MonoBehaviour {
     void IceLaser()
     {
         targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
-        targetEnemy.Slow(slowPct);
+        //targetEnemy.Slow(slowPct);
 
         if (!lineRenderer.enabled)
         {
